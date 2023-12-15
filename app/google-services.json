@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1007068446695",
+    "project_id": "octt-9aaa0",
+    "storage_bucket": "octt-9aaa0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007068446695:android:72c47f994fed0938ee0742",
+        "android_client_info": {
+          "package_name": "com.example.mylist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007068446695-rim76cnuvqrcn4ffv10cn3s53g90pfrj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdF3ILOJGRscrPIfBb_XxI5-5dgcjR7CE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007068446695-rim76cnuvqrcn4ffv10cn3s53g90pfrj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1007068446695-mkn75k1sqpc820t863ho4otu1geu6gsu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ilpacolo.oct"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

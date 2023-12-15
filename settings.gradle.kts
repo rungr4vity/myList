@@ -11,7 +11,9 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+
 }
+
 
 rootProject.name = "myList"
 include(":app")
