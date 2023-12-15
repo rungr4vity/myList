@@ -1,5 +1,7 @@
 package com.example.mylist
 
+import com.google.firebase.messaging.FirebaseMessagingService
 
-class MyFirebaseMessagingService {
+
+class MyFirebaseMessagingService: FirebaseMessagingService() {
 }
