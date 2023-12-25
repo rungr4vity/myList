@@ -1,6 +1,7 @@
 package com.example.mylist
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -9,12 +10,40 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import com.example.mylist.databinding.ActivityMainBinding
+import com.example.mylist.models.Items
+import com.example.mylist.network.Retrofitclient
+import com.example.mylist.protocols.retrofitService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+
+
+    fun getInfo() {
+
+        val retro = Retrofitclient.api.getInfo()
+
+        retro.enqueue(object : Callback<List<Items>>{
+            override fun onResponse(call: Call<List<Items>>, response: Response<List<Items>>) {
+                Toast.makeText(this@MainActivity,"OK",Toast.LENGTH_LONG).show()
+
+                Log.d("Json_response",response.body().toString())
+            }
+
+            override fun onFailure(call: Call<List<Items>>, t: Throwable) {
+                Toast.makeText(this@MainActivity,"Error",Toast.LENGTH_LONG).show()
+            }
+
+        })
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +61,9 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+
+
+        getInfo()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -55,4 +87,8 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
-}
+
+
+
+
+} // end activity

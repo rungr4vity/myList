@@ -1,18 +1,22 @@
 package com.example.mylist.network
 
+import com.example.mylist.protocols.retrofitService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-public class APIClient {
+object Retrofitclient {
 
 
     private fun getRetrofit():Retrofit{
 
         return Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl("https://jsonplaceholder.typicode.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
+
+    val api = getRetrofit().create(retrofitService::class.java)
 
 
 }
