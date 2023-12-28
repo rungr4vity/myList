@@ -4,18 +4,25 @@ import com.example.mylist.playground.object_companion.apple
 import com.example.mylist.playground.object_companion.apple_class
 
 fun main()  {
-
-    //var chicles: Dog = Dog()
-
-    //var myset: MutableSet<Int> = mutableSetOf<Int>(9,8,7,5,90,90)
+        //val myList = mutableListOf<String>("Francsico","Martin","Ramos")
 
 
-    //print(myset)
 
-    println(apple.name)
-    println(apple.getInfo())
+    fun getInfo(value: Int?,arreglo: Array<String>): Int {
+
+        if(value == null) { return 0 }
+
+        var final: String = ""
+        for(item in arreglo){
+
+            final =   item + final
+
+        }
+        println(final)
+        return 1
+    }
+
+    print(getInfo(1, arrayOf("a","b","c","d")))
 
 
-    println(apple_class.name)
-    println(apple_class.getInfo())
 }
